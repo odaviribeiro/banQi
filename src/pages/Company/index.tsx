@@ -16,6 +16,7 @@ const Company: React.FC = () => {
   useEffect(() => {
     response();
   }, [response]);
+
   return <></>;
 };
 
