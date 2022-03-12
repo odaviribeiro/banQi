@@ -9,12 +9,7 @@ import { cepRegex } from "@/utils/Regex/Cep";
 import ButtomForm from "@/components/Buttom/ButtomForm";
 import InnerPage from "@/components/InnerPage";
 
-function Form({
-  handleSubmitForm,
-  initialValues,
-  loading,
-  onPress,
-}: IForm<any>) {
+function Form({ handleSubmitForm, initialValues }: IForm<any>) {
   const { handleSubmit, handleChange, values, touched, errors, setFieldValue } =
     useFormik<ICompany>({
       initialValues: initialValues as ICompany,
@@ -79,7 +74,7 @@ function Form({
         error={!!touched.address?.zip && !!errors.address?.zip}
         msgErro={errors.address?.zip}
       />
-      {console.log(values)}
+
       <Input
         onChangeText={handleChange("address.city")}
         value={values.address?.city}
