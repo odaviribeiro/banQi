@@ -7,7 +7,7 @@ import React, { useCallback } from "react";
 import { Image, TouchableWithoutFeedback, View } from "react-native";
 import { useDispatch } from "react-redux";
 import { ICompany } from "../Interface";
-import Box from "./index.style";
+import Card from "@/components/Card";
 
 interface IItem {
   item: ICompany;
@@ -29,19 +29,7 @@ const Item: React.FC<IItem> = ({ item }) => {
 
   return (
     <TouchableWithoutFeedback onPress={() => onPress(item)}>
-      <Box
-        style={{
-          backgroundColor: theme.colors.white,
-          shadowColor: theme.colors.black,
-          shadowOffset: {
-            width: 2,
-            height: 3,
-          },
-          shadowOpacity: 0.27,
-          shadowRadius: 4.65,
-          elevation: 6,
-        }}
-      >
+      <Card>
         <Image
           style={{ width: 50, height: 50, borderRadius: 50 }}
           source={{
@@ -54,7 +42,7 @@ const Item: React.FC<IItem> = ({ item }) => {
           <Text>{name}</Text>
           <Text color={theme.colors.textSecundary}>{description}</Text>
         </View>
-      </Box>
+      </Card>
     </TouchableWithoutFeedback>
   );
 };
