@@ -5,8 +5,9 @@ import { yupSchema } from "./Validation";
 import Input from "@/components/Input";
 import React from "react";
 import Text from "@/components/Text";
-import { TouchableWithoutFeedback } from "react-native";
+import { ScrollView, TouchableWithoutFeedback } from "react-native";
 import { cnpjRegex } from "@/utils/Regex/Cnpj";
+import { cepRegex } from "@/utils/Regex/Cep";
 
 function Form({
   handleSubmitForm,
@@ -25,7 +26,7 @@ function Form({
     });
 
   return (
-    <>
+    <ScrollView style={{ paddingHorizontal: 30 }}>
       <Input
         onChangeText={handleChange("name")}
         value={values.name}
@@ -42,10 +43,88 @@ function Form({
         error={!!touched.cnpj && !!errors.cnpj}
         msgErro={errors.cnpj}
       />
+      <Input
+        onChangeText={handleChange("description")}
+        value={values.description}
+        placeholder="Descrição"
+        autoCapitalize="none"
+        error={!!touched.description && !!errors.description}
+        msgErro={errors.description}
+      />
+
+      <Input
+        onChangeText={handleChange("logo")}
+        value={values.logo}
+        placeholder="Logo"
+        autoCapitalize="none"
+        error={!!touched.logo && !!errors.logo}
+        msgErro={errors.logo}
+      />
+
+      <Input
+        onChangeText={(value) => setFieldValue("address.zip", cepRegex(value))}
+        value={String(values.address?.zip)}
+        placeholder="CEP"
+        autoCapitalize="none"
+        error={!!touched.address?.zip && !!errors.address?.zip}
+        msgErro={errors.address?.zip}
+      />
+      {console.log(values)}
+      <Input
+        onChangeText={handleChange("address.city")}
+        value={values.address?.city}
+        placeholder="Cidade"
+        autoCapitalize="none"
+        error={!!touched.address?.city && !!errors.address?.city}
+        msgErro={errors.address?.city}
+      />
+
+      <Input
+        onChangeText={handleChange("address.complement")}
+        value={values.address?.complement}
+        placeholder="Complemento"
+        autoCapitalize="none"
+      />
+
+      <Input
+        onChangeText={handleChange("address.neighborhood")}
+        value={values.address?.neighborhood}
+        placeholder="vizinhança"
+        autoCapitalize="none"
+      />
+
+      <Input
+        onChangeText={handleChange("address.number")}
+        value={String(values.address?.number)}
+        keyboardType="numeric"
+        placeholder="Número"
+        autoCapitalize="none"
+        error={!!touched.address?.number && !!errors.address?.number}
+        msgErro={errors.address?.number}
+      />
+
+      <Input
+        onChangeText={handleChange("address.state")}
+        value={values.address?.state}
+        placeholder="Estado"
+        autoCapitalize="none"
+        error={!!touched.address?.state && !!errors.address?.state}
+        msgErro={errors.address?.state}
+      />
+
+      <Input
+        onChangeText={handleChange("address.street")}
+        value={values.address?.street}
+        placeholder="Rua"
+        autoCapitalize="none"
+        error={!!touched.address?.street && !!errors.address?.street}
+        msgErro={errors.address?.street}
+      />
+
       <TouchableWithoutFeedback onPress={handleSubmit}>
         <Text>Registart</Text>
       </TouchableWithoutFeedback>
-    </>
+    </ScrollView>
   );
 }
 

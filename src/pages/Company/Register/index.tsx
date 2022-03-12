@@ -2,8 +2,6 @@ import React from "react";
 import Form from "../Form";
 
 const Item: React.FC = () => {
-  console.log("entrou");
-
   const handleSubmitForm = (value: any) => {};
   return (
     <Form
@@ -13,6 +11,15 @@ const Item: React.FC = () => {
         description: "",
         logo: "",
         name: "",
+        address: {
+          city: "",
+          complement: "",
+          neighborhood: "",
+          number: "",
+          state: "",
+          street: "",
+          zip: "",
+        },
       }}
     />
   );

@@ -22,7 +22,6 @@ const InternalRouter = () => {
             fontWeight: "bold",
           },
           contentStyle: {
-            marginHorizontal: 30,
             backgroundColor: theme.colors.white,
           },
         }}
@@ -40,7 +39,6 @@ const InternalRouter = () => {
             fontWeight: "bold",
           },
           contentStyle: {
-            paddingHorizontal: 30,
             backgroundColor: theme.colors.white,
           },
         }}
