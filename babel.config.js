@@ -15,6 +15,10 @@ module.exports = function(api) {
               "rootPathSuffix": "./src/pages",
               "rootPathPrefix": "@/pages"
             },
+            {
+              "rootPathSuffix": "./src/service",
+              "rootPathPrefix": "@/service"
+            },
           ]
         }
       ],
