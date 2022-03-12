@@ -1,7 +1,7 @@
 import { FlatListRender } from "@/interfaces/FlatList";
 import { AxiosError } from "axios";
 import React, { useCallback, useEffect } from "react";
-import { FlatList } from "react-native";
+import { FlatList, View } from "react-native";
 import Item from "./Components";
 import { ICompany } from "./Interface";
 import { getCompanies } from "./Services";
