@@ -7,3 +7,9 @@ export const companyReduce = (company: ICompany) => {
     company: company,
   };
 };
+
+export const companyDeleteReduce = () => {
+  return {
+    type: actionsTypesCompany.DELETE_COMPANY,
+  };
+};

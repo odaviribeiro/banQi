@@ -27,6 +27,8 @@ const reducerCompany = (state = initial_state, action: Action) => {
   switch (action.type) {
     case actionsTypesCompany.SET_COMPANY:
       return action.company;
+    case actionsTypesCompany.DELETE_COMPANY:
+      return initial_state;
     default:
       return state;
   }

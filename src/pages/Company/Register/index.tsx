@@ -10,7 +10,6 @@ const Item: React.FC = () => {
   const company = useSelector<StateRedux, ICompany>((state) => state.company);
 
   const handleSubmitForm = useCallback(async (value: ICompany) => {
-    console.log("comecou");
     // try {
     //   (await !value.createdAt) ? postCompanies(value) : putCompanies(value);
     //   console.log("terminou com sucesso");
