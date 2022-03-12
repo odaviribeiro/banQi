@@ -21,6 +21,10 @@ const InternalRouter = () => {
           headerTitleStyle: {
             fontWeight: "bold",
           },
+          contentStyle: {
+            marginHorizontal: 30,
+            backgroundColor: theme.colors.white,
+          },
         }}
       />
       <Stack.Screen
@@ -34,6 +38,10 @@ const InternalRouter = () => {
           headerTintColor: theme.colors.black,
           headerTitleStyle: {
             fontWeight: "bold",
+          },
+          contentStyle: {
+            paddingHorizontal: 30,
+            backgroundColor: theme.colors.white,
           },
         }}
       />
