@@ -1,4 +1,4 @@
-import { http } from "../../../service";
+import { http } from "@/service";
 import { ICompany } from "../Interface";
 const URl = "/companies";
 

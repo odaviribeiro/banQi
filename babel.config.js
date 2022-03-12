@@ -31,6 +31,10 @@ module.exports = function(api) {
               "rootPathSuffix": "./src/routes",
               "rootPathPrefix": "@/routes"
             },
+            {
+              "rootPathSuffix": "./src/utils",
+              "rootPathPrefix": "@/utils"
+            },
           ]
         }
       ],
