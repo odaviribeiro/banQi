@@ -11,7 +11,7 @@ interface IAddress {
 export interface ICompany {
   address: IAddress;
   cnpj: string;
-  createdAt: Date;
+  createdAt?: Date;
   description: string;
   logo: string;
   name: string;

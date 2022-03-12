@@ -1,9 +1,21 @@
 import React from "react";
-import { View } from "react-native";
+import Form from "../Form";
 
 const Item: React.FC = () => {
   console.log("entrou");
-  return <View style={{ flex: 1, marginLeft: 40 }}></View>;
+
+  const handleSubmitForm = (value: any) => {};
+  return (
+    <Form
+      handleSubmitForm={handleSubmitForm}
+      initialValues={{
+        cnpj: "",
+        description: "",
+        logo: "",
+        name: "",
+      }}
+    />
+  );
 };
 
 export default Item;
