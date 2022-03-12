@@ -6,7 +6,7 @@ const theme = {
     text: "#525252",
     textSecundary: "#b1b1b1",
     frostbite: "#f230a3",
-    black: "#000",
+    black: "#00000",
 
     blue: "#007bff",
     indigo: "#6610f2",
