@@ -32,8 +32,10 @@ const Item: React.FC<IItem> = ({ item }) => {
         height={80}
       />
       <View style={{ flex: 1, marginLeft: 40 }}>
-        <Text style={{ fontSize: 22, fontWeight: "600" }}>{name}</Text>
-        <Text>{description}</Text>
+        <Text style={{ fontSize: 22, fontWeight: "600", color: "#525252" }}>
+          {name}
+        </Text>
+        <Text style={{ color: "#b1b1b1" }}>{description}</Text>
       </View>
     </Box>
   );
