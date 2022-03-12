@@ -1,5 +1,7 @@
+import Text from "@/components/Text";
+import theme from "@/theme";
 import React from "react";
-import { Image, Text, View } from "react-native";
+import { Image, View } from "react-native";
 import { ICompany } from "../Interface";
 import Box from "./index.style";
 
@@ -9,11 +11,12 @@ interface IItem {
 
 const Item: React.FC<IItem> = ({ item }) => {
   const { name, description } = item;
+
   return (
     <Box
       style={{
-        backgroundColor: "white",
-        shadowColor: " #000",
+        backgroundColor: theme.colors.white,
+        shadowColor: theme.colors.black,
         shadowOffset: {
           width: 2,
           height: 3,
@@ -32,10 +35,8 @@ const Item: React.FC<IItem> = ({ item }) => {
         height={80}
       />
       <View style={{ flex: 1, marginLeft: 40 }}>
-        <Text style={{ fontSize: 22, fontWeight: "600", color: "#525252" }}>
-          {name}
-        </Text>
-        <Text style={{ color: "#b1b1b1" }}>{description}</Text>
+        <Text>{name}</Text>
+        <Text color={theme.colors.textSecundary}>{description}</Text>
       </View>
     </Box>
   );

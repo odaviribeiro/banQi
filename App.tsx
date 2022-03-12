@@ -3,12 +3,14 @@ import { StatusBar } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import React from "react";
+import { ThemeProvider } from "styled-components/native";
+import theme from "@/theme";
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <StatusBar barStyle="light-content" />
       <NavigationContainer>
         <Stack.Navigator initialRouteName="Home">
@@ -18,9 +20,9 @@ export default function App() {
             options={{
               title: "Home",
               headerStyle: {
-                backgroundColor: "#f230a3",
+                backgroundColor: theme.colors.frostbite,
               },
-              headerTintColor: "#000000",
+              headerTintColor: theme.colors.black,
               headerTitleStyle: {
                 fontWeight: "bold",
               },
@@ -29,6 +31,6 @@ export default function App() {
           <Stack.Screen name="Details" component={Company} />
         </Stack.Navigator>
       </NavigationContainer>
-    </>
+    </ThemeProvider>
   );
 }
