@@ -1,3 +1,4 @@
+import InnerPage from "@/components/InnerPage";
 import { FlatListRender } from "@/interfaces/FlatList";
 import { NavigationPagesProps } from "@/routes";
 import { useNavigation } from "@react-navigation/native";
@@ -36,7 +37,7 @@ const Company: React.FC = () => {
   );
 
   return (
-    <>
+    <InnerPage disabledScrollView>
       <TouchableWithoutFeedback onPress={() => navigate("NewCompany")}>
         <Text>Registart</Text>
       </TouchableWithoutFeedback>
@@ -49,7 +50,7 @@ const Company: React.FC = () => {
         scrollEventThrottle={32}
         renderItem={renderItem}
       />
-    </>
+    </InnerPage>
   );
 };
 

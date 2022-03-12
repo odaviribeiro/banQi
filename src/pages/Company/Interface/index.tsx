@@ -15,4 +15,5 @@ export interface ICompany {
   description: string;
   logo: string;
   name: string;
+  revenue: number;
 }

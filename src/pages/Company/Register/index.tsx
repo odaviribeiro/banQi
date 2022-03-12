@@ -11,6 +11,7 @@ const Item: React.FC = () => {
         description: "",
         logo: "",
         name: "",
+        revenue: 0,
         address: {
           city: "",
           complement: "",

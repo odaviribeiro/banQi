@@ -4,10 +4,10 @@ import { ICompany } from "../Interface";
 import { yupSchema } from "./Validation";
 import Input from "@/components/Input";
 import React from "react";
-import Text from "@/components/Text";
-import { ScrollView, TouchableWithoutFeedback } from "react-native";
 import { cnpjRegex } from "@/utils/Regex/Cnpj";
 import { cepRegex } from "@/utils/Regex/Cep";
+import ButtomForm from "@/components/Buttom/ButtomForm";
+import InnerPage from "@/components/InnerPage";
 
 function Form({
   handleSubmitForm,
@@ -26,7 +26,7 @@ function Form({
     });
 
   return (
-    <ScrollView style={{ paddingHorizontal: 30 }}>
+    <InnerPage>
       <Input
         onChangeText={handleChange("name")}
         value={values.name}
@@ -35,6 +35,7 @@ function Form({
         error={!!touched.name && !!errors.name && !values.name}
         msgErro={errors.name}
       />
+
       <Input
         onChangeText={(value) => setFieldValue("cnpj", cnpjRegex(value))}
         value={values.cnpj}
@@ -43,6 +44,7 @@ function Form({
         error={!!touched.cnpj && !!errors.cnpj}
         msgErro={errors.cnpj}
       />
+
       <Input
         onChangeText={handleChange("description")}
         value={values.description}
@@ -61,6 +63,14 @@ function Form({
         msgErro={errors.logo}
       />
 
+      <Input
+        onChangeText={handleChange("revenue")}
+        value={String(values.revenue)}
+        placeholder="Receita"
+        autoCapitalize="none"
+        error={!!touched.revenue && !!errors.revenue}
+        msgErro={errors.revenue}
+      />
       <Input
         onChangeText={(value) => setFieldValue("address.zip", cepRegex(value))}
         value={String(values.address?.zip)}
@@ -121,10 +131,8 @@ function Form({
         msgErro={errors.address?.street}
       />
 
-      <TouchableWithoutFeedback onPress={handleSubmit}>
-        <Text>Registart</Text>
-      </TouchableWithoutFeedback>
-    </ScrollView>
+      <ButtomForm onPress={handleSubmit} />
+    </InnerPage>
   );
 }
 
