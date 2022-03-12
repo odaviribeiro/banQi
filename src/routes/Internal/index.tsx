@@ -20,6 +20,7 @@ const InternalRouter = () => {
           headerTintColor: theme.colors.black,
           headerTitleStyle: {
             fontWeight: "bold",
+            color: theme.colors.black,
           },
           contentStyle: {
             backgroundColor: theme.colors.white,
@@ -37,9 +38,13 @@ const InternalRouter = () => {
           headerTintColor: theme.colors.black,
           headerTitleStyle: {
             fontWeight: "bold",
+            color: theme.colors.black,
           },
           contentStyle: {
             backgroundColor: theme.colors.white,
+          },
+          headerLargeTitleStyle: {
+            color: theme.colors.black,
           },
         }}
       />

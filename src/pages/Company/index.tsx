@@ -57,7 +57,7 @@ const Company: React.FC = () => {
   return (
     <InnerPage disabledScrollView>
       <TouchableWithoutFeedback onPress={() => navigate("NewCompany")}>
-        <Text>Registart</Text>
+        <Text>Nova Empresa</Text>
       </TouchableWithoutFeedback>
       <Input onChangeText={(value) => search(value)} placeholder="Pesquisa" />
 
