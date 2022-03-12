@@ -8,6 +8,7 @@ import { Image, TouchableWithoutFeedback, View } from "react-native";
 import { useDispatch } from "react-redux";
 import { ICompany } from "../Interface";
 import Card from "@/components/Card";
+import RouterNames from "@/routes/Internal";
 
 interface IItem {
   item: ICompany;
@@ -22,7 +23,7 @@ const Item: React.FC<IItem> = ({ item }) => {
   const onPress = useCallback(
     (value: ICompany) => {
       dispatch(companyReduce(value));
-      navigate("NewCompany");
+      navigate(RouterNames.NewCompany);
     },
     [dispatch]
   );

@@ -3,6 +3,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import React from "react";
 import theme from "@/theme";
 import Register from "@/pages/Company/Register";
+import RouterNames from ".";
 
 const Stack = createNativeStackNavigator();
 
@@ -10,7 +11,7 @@ const InternalRouter = () => {
   return (
     <Stack.Navigator initialRouteName="Home">
       <Stack.Screen
-        name="Home"
+        name={RouterNames.Home}
         component={Company}
         options={{
           title: "Home",
@@ -28,7 +29,7 @@ const InternalRouter = () => {
         }}
       />
       <Stack.Screen
-        name="NewCompany"
+        name={RouterNames.NewCompany}
         component={Register}
         options={{
           title: "Nova Empresa",

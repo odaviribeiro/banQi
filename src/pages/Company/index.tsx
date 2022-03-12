@@ -2,6 +2,7 @@ import InnerPage from "@/components/InnerPage";
 import Input from "@/components/Input";
 import { FlatListRender } from "@/interfaces/FlatList";
 import { NavigationPagesProps } from "@/routes";
+import RouterNames from "@/routes/Internal";
 import { companyDeleteReduce } from "@/store/redux/Actions";
 import { useNavigation } from "@react-navigation/native";
 import { AxiosError } from "axios";
@@ -56,7 +57,9 @@ const Company: React.FC = () => {
 
   return (
     <InnerPage disabledScrollView>
-      <TouchableWithoutFeedback onPress={() => navigate("NewCompany")}>
+      <TouchableWithoutFeedback
+        onPress={() => navigate(RouterNames.NewCompany)}
+      >
         <Text>Nova Empresa</Text>
       </TouchableWithoutFeedback>
       <Input onChangeText={(value) => search(value)} placeholder="Pesquisa" />
