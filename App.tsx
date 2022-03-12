@@ -1,5 +1,10 @@
 import Company from "@/pages/Company";
+import { SafeAreaView } from "react-native";
 
 export default function App() {
-  return <Company />;
+  return (
+    <SafeAreaView>
+      <Company />
+    </SafeAreaView>
+  );
 }
