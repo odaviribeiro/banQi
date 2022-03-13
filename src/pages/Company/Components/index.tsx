@@ -7,8 +7,8 @@ import React, { useCallback } from "react";
 import { Image, TouchableWithoutFeedback, View } from "react-native";
 import { useDispatch } from "react-redux";
 import { ICompany } from "../Interface";
-import Card from "@/components/Card";
 import RouterNames from "@/routes/Internal";
+import Box from "@/components/Card/index.style";
 
 interface IItem {
   item: ICompany;
@@ -30,7 +30,19 @@ const Item: React.FC<IItem> = ({ item }) => {
 
   return (
     <TouchableWithoutFeedback onPress={() => onPress(item)}>
-      <Card>
+      <Box
+        style={{
+          backgroundColor: theme.colors.white,
+          shadowColor: theme.colors.secondary,
+          shadowOffset: {
+            width: 2,
+            height: 3,
+          },
+          shadowOpacity: 0.27,
+          shadowRadius: 4.65,
+          elevation: 6,
+        }}
+      >
         <Image
           style={{ width: 50, height: 50, borderRadius: 50 }}
           source={{
@@ -43,7 +55,7 @@ const Item: React.FC<IItem> = ({ item }) => {
           <Text>{name}</Text>
           <Text color={theme.colors.textSecundary}>{description}</Text>
         </View>
-      </Card>
+      </Box>
     </TouchableWithoutFeedback>
   );
 };

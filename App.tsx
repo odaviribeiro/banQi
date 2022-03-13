@@ -3,9 +3,9 @@ import { NavigationContainer } from "@react-navigation/native";
 import React from "react";
 import { ThemeProvider } from "styled-components/native";
 import theme from "@/theme";
-import InternalRouter from "./src/routes/Internal";
 import { Provider } from "react-redux";
-import store from "./src/store";
+import InternalRouter from "@/routes/Internal/Internal";
+import store from "@/store";
 
 export default function App() {
   return (
