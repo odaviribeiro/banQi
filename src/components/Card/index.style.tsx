@@ -1,11 +1,11 @@
 import theme from "@/theme";
 import styled from "styled-components/native";
 
-export interface IBox {
+export interface ICard {
   borderColor?: string;
 }
 
-const Box = styled.View<IBox>`
+const Card = styled.View<ICard>`
   border-radius: 10px;
   border-width: 0.5px;
   border-color: ${({ borderColor }) => borderColor};
@@ -15,8 +15,8 @@ const Box = styled.View<IBox>`
   flex-direction: row;
 `;
 
-Box.defaultProps = {
+Card.defaultProps = {
   borderColor: theme.colors.secondary,
 };
 
-export default Box;
+export default Card;

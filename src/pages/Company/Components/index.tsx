@@ -3,12 +3,12 @@ import { NavigationPagesProps } from "@/routes";
 import { companyReduce } from "../../../store/redux/Actions";
 import theme from "@/theme";
 import { useNavigation } from "@react-navigation/native";
-import React, { useCallback } from "react";
+import React, { memo, useCallback } from "react";
 import { Image, TouchableWithoutFeedback, View } from "react-native";
 import { useDispatch } from "react-redux";
 import { ICompany } from "../Interface";
 import RouterNames from "@/routes/Internal";
-import Box from "@/components/Card/index.style";
+import Card from "@/components/Card/index.style";
 
 interface IItem {
   item: ICompany;
@@ -30,7 +30,7 @@ const Item: React.FC<IItem> = ({ item }) => {
 
   return (
     <TouchableWithoutFeedback onPress={() => onPress(item)}>
-      <Box
+      <Card
         style={{
           backgroundColor: theme.colors.white,
           shadowColor: theme.colors.secondary,
@@ -55,9 +55,9 @@ const Item: React.FC<IItem> = ({ item }) => {
           <Text>{name}</Text>
           <Text color={theme.colors.textSecundary}>{description}</Text>
         </View>
-      </Box>
+      </Card>
     </TouchableWithoutFeedback>
   );
 };
 
-export default Item;
+export default memo(Item);

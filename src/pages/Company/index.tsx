@@ -1,23 +1,16 @@
 import InnerPage from "@/components/InnerPage";
-import Input from "@/components/Input";
 import { FlatListRender } from "@/interfaces/FlatList";
-import { NavigationPagesProps } from "@/routes";
-import RouterNames from "@/routes/Internal";
-import { companyDeleteReduce } from "@/store/redux/Actions";
-import { useNavigation } from "@react-navigation/native";
 import { AxiosError } from "axios";
 import React, { useCallback, useEffect } from "react";
-import { FlatList, Text, TouchableWithoutFeedback } from "react-native";
-import { useDispatch } from "react-redux";
+import { FlatList } from "react-native";
 import Item from "./Components";
+import Header from "./Components/Header";
 import { ICompany } from "./Interface";
 import { getCompanies } from "./Services";
 
 const Company: React.FC = () => {
   const [originalData, setOriginalData] = React.useState<ICompany[]>([]);
   const [data, setData] = React.useState<ICompany[]>([]);
-  const { navigate } = useNavigation<NavigationPagesProps>();
-  const dispatch = useDispatch();
 
   const response = useCallback(async () => {
     await getCompanies()
@@ -33,10 +26,6 @@ const Company: React.FC = () => {
   useEffect(() => {
     response();
   }, [response]);
-
-  useEffect(() => {
-    dispatch(companyDeleteReduce());
-  }, [dispatch]);
 
   const renderItem = useCallback(({ item }: FlatListRender<ICompany>) => {
     return <Item item={item} />;
@@ -57,17 +46,13 @@ const Company: React.FC = () => {
 
   return (
     <InnerPage disabledScrollView>
-      <TouchableWithoutFeedback
-        onPress={() => navigate(RouterNames.NewCompany)}
-      >
-        <Text>Nova Empresa</Text>
-      </TouchableWithoutFeedback>
-      <Input onChangeText={(value) => search(value)} placeholder="Pesquisa" />
+      <Header onChangeText={(value) => search(value)} />
 
       <FlatList
         data={data}
         keyExtractor={keyExtractor}
         onEndReachedThreshold={0.1}
+        contentContainerStyle={{ paddingHorizontal: 30, marginBottom: 30 }}
         scrollEventThrottle={32}
         renderItem={renderItem}
       />
