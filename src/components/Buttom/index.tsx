@@ -5,7 +5,7 @@ import {
 } from "react-native";
 import Buttom, { IButtomStyled } from "./index.style";
 
-interface IButtom extends TouchableWithoutFeedbackProps, IButtomStyled {
+export interface IButtom extends TouchableWithoutFeedbackProps, IButtomStyled {
   children?: ReactNode;
   testID?: string;
 }

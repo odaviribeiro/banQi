@@ -6,12 +6,13 @@ export interface IButtomStyled {
   bg?: string;
   w?: string;
   borderColor?: string;
+  borderRadius?: string;
 }
 
 const Buttom = styled.View<IButtomStyled>`
   color: ${({ color }) => color}; 
   background-color: ${({ bg }) => bg};
-  border-radius: 40px;
+  border-radius: ${({ borderRadius }) => borderRadius};
   width: ${({ w }) => w};
   height: 48px;
   align-items: center; 
@@ -24,7 +25,8 @@ Buttom.defaultProps = {
   color: theme.colors.text, 
   bg: theme.colors.primary,
   w: "100%",
-  borderColor: theme.colors.primary
+  borderColor: theme.colors.primary,
+  borderRadius: "40px",
 }
 
 export default Buttom;
