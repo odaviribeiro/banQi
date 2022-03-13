@@ -10,7 +10,7 @@ interface ITextBody {
 
 const TextBody: React.FC<ITextBody> = ({ name, description }) => {
   return (
-    <View style={{ flex: 1, marginLeft: 40 }}>
+    <View style={{ flex: 1, marginLeft: 40 }} testID="testTextBody">
       <Text>{name}</Text>
       <Text color={theme.colors.textSecundary}>{description}</Text>
     </View>
