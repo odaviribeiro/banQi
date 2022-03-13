@@ -32,7 +32,7 @@ const Header: React.FC<IHeader> = ({ onChangeText }) => {
   );
 
   return (
-    <View style={{ paddingHorizontal: 30, paddingTop: 10 }}>
+    <View style={{ paddingHorizontal: 30 }}>
       {buttomNewCompany}
       <Input
         onChangeText={(value) => onChangeText(value)}

@@ -8,6 +8,7 @@ import { cnpjRegex } from "@/utils/Regex/Cnpj";
 import { cepRegex } from "@/utils/Regex/Cep";
 import ButtomForm from "@/components/Buttom/ButtomForm";
 import InnerPage from "@/components/InnerPage";
+import Text from "@/components/Text";
 
 function Form({ handleSubmitForm, initialValues }: IForm<any>) {
   const { handleSubmit, handleChange, values, touched, errors, setFieldValue } =
@@ -22,6 +23,7 @@ function Form({ handleSubmitForm, initialValues }: IForm<any>) {
 
   return (
     <InnerPage>
+      <Text fontWeight="600">Informações da empresa</Text>
       <Input
         onChangeText={handleChange("name")}
         value={values.name}
@@ -60,15 +62,18 @@ function Form({ handleSubmitForm, initialValues }: IForm<any>) {
 
       <Input
         onChangeText={handleChange("revenue")}
-        value={String(values.revenue)}
+        value={String(values.revenue || "")}
         placeholder="Receita"
         autoCapitalize="none"
         error={!!touched.revenue && !!errors.revenue}
         msgErro={errors.revenue}
       />
+      <Text mt="12px" fontWeight="600">
+        Endereço da empresa
+      </Text>
       <Input
         onChangeText={(value) => setFieldValue("address.zip", cepRegex(value))}
-        value={String(values.address?.zip)}
+        value={String(values.address?.zip || "")}
         placeholder="CEP"
         autoCapitalize="none"
         error={!!touched.address?.zip && !!errors.address?.zip}
@@ -100,7 +105,7 @@ function Form({ handleSubmitForm, initialValues }: IForm<any>) {
 
       <Input
         onChangeText={handleChange("address.number")}
-        value={String(values.address?.number)}
+        value={String(values.address?.number || "")}
         keyboardType="numeric"
         placeholder="Número"
         autoCapitalize="none"
