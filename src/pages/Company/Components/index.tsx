@@ -1,14 +1,15 @@
-import Text from "@/components/Text";
 import { NavigationPagesProps } from "@/routes";
 import { companyReduce } from "../../../store/redux/Actions";
 import theme from "@/theme";
 import { useNavigation } from "@react-navigation/native";
 import React, { memo, useCallback } from "react";
-import { Image, TouchableWithoutFeedback, View } from "react-native";
+import { TouchableWithoutFeedback } from "react-native";
 import { useDispatch } from "react-redux";
 import { ICompany } from "../Interface";
 import RouterNames from "@/routes/Internal";
 import Card from "@/components/Card/index.style";
+import TextBody from "./TextBody";
+import Image from "./Image";
 
 interface IItem {
   item: ICompany;
@@ -44,17 +45,11 @@ const Item: React.FC<IItem> = ({ item }) => {
         }}
       >
         <Image
-          style={{ width: 50, height: 50, borderRadius: 50 }}
-          source={{
-            uri: "https://s1.static.brasilescola.uol.com.br/be/conteudo/images/imagem-em-lente-convexa.jpg",
-          }}
-          width={80}
-          height={80}
+          uri={
+            "https://s1.static.brasilescola.uol.com.br/be/conteudo/images/imagem-em-lente-convexa.jpg"
+          }
         />
-        <View style={{ flex: 1, marginLeft: 40 }}>
-          <Text>{name}</Text>
-          <Text color={theme.colors.textSecundary}>{description}</Text>
-        </View>
+        <TextBody name={name} description={description} />
       </Card>
     </TouchableWithoutFeedback>
   );
