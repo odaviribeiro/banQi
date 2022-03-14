@@ -61,8 +61,10 @@ yarn test
 
 # Telas do projeto
 
-![img](./assets/preView/img2.jpeg)
-![img](./assets/preView/img1.jpeg)
-![img](./assets/preView/img3.jpeg)
-![img](./assets/preView/img4.jpeg)
-![img](./assets/preView/video.gif)
+<img src="./assets/preView/img2.jpeg" alt="drawing" width="140" height={280}/>
+<img src="./assets/preView/img1.jpeg" alt="drawing" width="140" height={280}/>
+<img src="./assets/preView/img3.jpeg" alt="drawing" width="140" height={280}/>
+<img src="./assets/preView/img4.jpeg" alt="drawing" width="140" height={280}/>
+<img src="./assets/preView/video.gif" alt="drawing" width="140" height={280}/>
+
+
