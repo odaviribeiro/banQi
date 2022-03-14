@@ -35,23 +35,30 @@ describe("@text: component checks", () => {
     );
     const foundBodyElement = getByTestId("testButtom");
 
-    expect(foundBodyElement.props.color).not.toEqual(theme.colors.primary);
-    expect(foundBodyElement.props.color).toEqual(theme.colors.text);
+    expect(foundBodyElement.props.style[0].color).not.toEqual(
+      theme.colors.primary
+    );
+    expect(foundBodyElement.props.style[0].color).toEqual(theme.colors.text);
 
-    expect(foundBodyElement.props.backgroundColor).not.toEqual(
+    expect(foundBodyElement.props.style[0].backgroundColor).not.toEqual(
       theme.colors.text
     );
-    expect(foundBodyElement.props.backgroundColor).toEqual(
+
+    expect(foundBodyElement.props.style[0].backgroundColor).toEqual(
       theme.colors.primary
     );
 
-    expect(foundBodyElement.props.w).not.toEqual("0%");
-    expect(foundBodyElement.props.w).toEqual("100%");
+    expect(foundBodyElement.props.style[0].width).not.toEqual("0%");
+    expect(foundBodyElement.props.style[0].width).toEqual("100%");
 
-    expect(foundBodyElement.props.borderColor).not.toEqual(theme.colors.text);
-    expect(foundBodyElement.props.borderColor).toEqual(theme.colors.primary);
+    expect(foundBodyElement.props.style[0].borderColor).not.toEqual(
+      theme.colors.text
+    );
+    expect(foundBodyElement.props.style[0].borderColor).toEqual(
+      theme.colors.primary
+    );
 
-    expect(foundBodyElement.props.borderRadius).not.toEqual("0px");
-    expect(foundBodyElement.props.borderRadius).toEqual("40px");
+    expect(foundBodyElement.props.style[0].borderRadius).not.toEqual(0);
+    expect(foundBodyElement.props.style[0].borderRadius).toEqual(40);
   });
 });
