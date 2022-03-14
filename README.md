@@ -49,5 +49,17 @@ O projeto possui alguns testes, ao qual podem ser executados via yarn test.
 yarn test
 ```
 
+<br/>
 
+# Tecnologias, framework e bibliotecas usadas no projeto
+* Java Script
+* Type Script
+* Styled-Component
+* Redux
+* React Native
+* testing-library
+* axios
+* yup
+
+# Telas do projeto
 
