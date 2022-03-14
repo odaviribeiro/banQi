@@ -65,7 +65,7 @@ const Company: React.FC = () => {
         onEndReachedThreshold={0.1}
         contentContainerStyle={{
           paddingHorizontal: 16,
-          marginBottom: getBottomSpace() + 20,
+          paddingBottom: getBottomSpace() + 20,
         }}
         scrollEventThrottle={32}
         renderItem={renderItem}

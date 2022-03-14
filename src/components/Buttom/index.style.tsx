@@ -14,7 +14,7 @@ export const ButtomForm = styled.View`
   flex-direction: row;
   justify-content: space-between;
   margin-vertical: 10px;
-  margin-bottom: ${getBottomSpace() + 10}px;
+  margin-bottom: ${getBottomSpace() + 50}px;
 `;
 
 const Buttom = styled.View<IButtomStyled>`
