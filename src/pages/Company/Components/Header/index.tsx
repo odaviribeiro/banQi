@@ -3,11 +3,11 @@ import { NavigationPagesProps } from "@/routes";
 import RouterNames from "@/routes/Internal";
 import { useNavigation } from "@react-navigation/native";
 import { View } from "react-native";
-import Input from "@/components/Input";
 import { useDispatch } from "react-redux";
 import { companyDeleteReduce } from "@/store/redux/Actions";
 import theme from "@/theme";
 import ButtomText from "@/components/Buttom/ButtomText";
+import InputSearch from "@/components/Input/InputSearch";
 
 interface IHeader {
   onChangeText: (value: string) => void;
@@ -34,11 +34,7 @@ const Header: React.FC<IHeader> = ({ onChangeText }) => {
   return (
     <View style={{ paddingHorizontal: 30 }}>
       {buttomNewCompany}
-      <Input
-        onChangeText={(value) => onChangeText(value)}
-        placeholder="Pesquisa"
-        autoCapitalize="none"
-      />
+      <InputSearch onChangeText={(value) => onChangeText(value)} />
     </View>
   );
 };

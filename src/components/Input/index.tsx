@@ -1,15 +1,10 @@
+import React from "react";
 import theme from "@/theme";
-import React, { ReactNode } from "react";
-import { TextInputProps } from "react-native";
 import Text from "../Text";
-import Input, { IInput } from "./index.style";
+import { InputProps } from "./index.d";
+import Input from "./index.style";
 
-interface ITextC extends TextInputProps, IInput {
-  children?: ReactNode;
-  msgErro?: string;
-}
-
-const InputComponent: React.FC<ITextC> = (props) => {
+const InputComponent: React.FC<InputProps> = (props) => {
   const { error, msgErro } = props;
   return (
     <>
