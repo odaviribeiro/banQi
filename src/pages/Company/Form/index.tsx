@@ -23,7 +23,9 @@ function Form({ handleSubmitForm, initialValues }: IForm<any>) {
 
   return (
     <InnerPage>
-      <Text fontWeight="600">Informações da empresa</Text>
+      <Text fontWeight="700" fontSize="20px">
+        Informações da empresa
+      </Text>
       <Input
         onChangeText={handleChange("name")}
         value={values.name}
@@ -68,7 +70,7 @@ function Form({ handleSubmitForm, initialValues }: IForm<any>) {
         error={!!touched.revenue && !!errors.revenue}
         msgErro={errors.revenue}
       />
-      <Text mt="12px" fontWeight="600">
+      <Text mt="12px" fontWeight="700" fontSize="20px">
         Endereço da empresa
       </Text>
       <Input
