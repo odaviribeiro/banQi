@@ -46,7 +46,7 @@ describe("@text: component checks", () => {
     expect(foundBodyElement.props.style.flex).toEqual(1);
 
     expect(foundBodyElement.props.style.marginLeft).not.toEqual(0);
-    expect(foundBodyElement.props.style.marginLeft).toEqual(40);
+    expect(foundBodyElement.props.style.marginLeft).toEqual(24);
   });
 
   it("should render defaultProps styles Text TextBody", () => {

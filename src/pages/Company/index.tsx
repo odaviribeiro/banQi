@@ -1,16 +1,16 @@
+import React, { useCallback, useEffect, useState } from "react";
+import { FlatList } from "react-native";
 import InnerPage from "@/components/InnerPage";
 import { FlatListRender } from "@/interfaces/FlatList";
 import { AxiosError } from "axios";
-import React, { useCallback, useEffect } from "react";
-import { FlatList } from "react-native";
 import Item from "./Components";
 import Header from "./Components/Header";
 import { ICompany } from "./Interface";
 import { getCompanies } from "./Services";
 
 const Company: React.FC = () => {
-  const [originalData, setOriginalData] = React.useState<ICompany[]>([]);
-  const [data, setData] = React.useState<ICompany[]>([]);
+  const [originalData, setOriginalData] = useState<ICompany[]>([]);
+  const [data, setData] = useState<ICompany[]>([]);
 
   const response = useCallback(async () => {
     await getCompanies()
@@ -31,10 +31,7 @@ const Company: React.FC = () => {
     return <Item item={item} />;
   }, []);
 
-  const keyExtractor = useCallback(
-    (item: ICompany) => String(item.createdAt),
-    []
-  );
+  const keyExtractor = useCallback((item: ICompany) => String(item.id), []);
 
   const search = (value: string) => {
     setData(
