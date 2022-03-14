@@ -4,7 +4,6 @@ Desafio BanQi
 # Sua maquina vai precisar dos requisitos a seguir para rodar esse projeto:
 1. node v. 12.0.0 ou superior 
 1. yarn
-1. expo
 
 # Passos para instalação:
 
