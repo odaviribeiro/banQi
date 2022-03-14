@@ -1,5 +1,5 @@
-# banQi
-Desafio BanQi
+# <center>**BanQi**</center>
+<center>**Desafio BanQi**</center>
 
 # Sua maquina vai precisar dos requisitos a seguir para rodar esse projeto:
 1. node v. 12.0.0 ou superior 
@@ -61,3 +61,8 @@ yarn test
 
 # Telas do projeto
 
+![img](./assets/preView/img2.jpeg)
+![img](./assets/preView/img1.jpeg)
+![img](./assets/preView/img3.jpeg)
+![img](./assets/preView/img4.jpeg)
+![img](./assets/preView/video.jpeg)
