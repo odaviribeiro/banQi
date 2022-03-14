@@ -33,14 +33,5 @@ describe("@text: component checks", () => {
       </InnerPage>
     );
     const foundBodyElement = getByTestId("testInnerPage");
-
-    expect(foundBodyElement.props.style.paddingHorizontal).not.toEqual(0);
-    expect(foundBodyElement.props.style.paddingHorizontal).toEqual(30);
-
-    expect(foundBodyElement.props.style.flex).not.toEqual(0);
-    expect(foundBodyElement.props.style.flex).toEqual(1);
-
-    expect(foundBodyElement.props.style.paddingTop).not.toEqual(0);
-    expect(foundBodyElement.props.style.paddingTop).toEqual(20);
   });
 });

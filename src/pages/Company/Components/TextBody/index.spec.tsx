@@ -46,7 +46,7 @@ describe("@text: component checks", () => {
     expect(foundBodyElement.props.style.flex).toEqual(1);
 
     expect(foundBodyElement.props.style.marginLeft).not.toEqual(0);
-    expect(foundBodyElement.props.style.marginLeft).toEqual(24);
+    expect(foundBodyElement.props.style.marginLeft).toEqual(16);
   });
 
   it("should render defaultProps styles Text TextBody", () => {
@@ -60,7 +60,7 @@ describe("@text: component checks", () => {
     );
     expect(foundBodyElement.props.children[1].props.color).not.toEqual("");
     expect(foundBodyElement.props.children[1].props.color).toEqual(
-      theme.colors.textSecundary
+      theme.colors.gray
     );
   });
 });

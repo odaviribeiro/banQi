@@ -1,6 +1,5 @@
 import theme from "@/theme";
 import styled from "styled-components/native";
-import { getBottomSpace } from "react-native-iphone-x-helper";
 
 export interface IButtomStyled {
   color?: string;
@@ -14,7 +13,7 @@ export const ButtomForm = styled.View`
   flex-direction: row;
   justify-content: space-between;
   margin-vertical: 10px;
-  margin-bottom: ${getBottomSpace() + 50}px;
+  margin-bottom: 50px;
 `;
 
 const Buttom = styled.View<IButtomStyled>`
