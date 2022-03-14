@@ -65,4 +65,4 @@ yarn test
 ![img](./assets/preView/img1.jpeg)
 ![img](./assets/preView/img3.jpeg)
 ![img](./assets/preView/img4.jpeg)
-![img](./assets/preView/video.jpeg)
+![img](./assets/preView/video.gif)
