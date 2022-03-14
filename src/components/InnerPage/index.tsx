@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import { ScrollView, View } from "react-native";
+import { Box, BoxScrollView } from "./index.style";
 
 interface InnerPageI {
   children: ReactNode;
@@ -10,24 +10,10 @@ const InnerPage: React.FC<InnerPageI> = (props) => {
   const { children, disabledScrollView } = props;
 
   if (disabledScrollView) {
-    return (
-      <View
-        style={{ flex: 1, paddingTop: 20 }}
-        testID="testInnerPageDisabledScrollView"
-      >
-        {children}
-      </View>
-    );
+    return <Box testID="testInnerPageDisabledScrollView">{children}</Box>;
   }
 
-  return (
-    <ScrollView
-      style={{ paddingHorizontal: 30, flex: 1, paddingTop: 20 }}
-      testID="testInnerPage"
-    >
-      {children}
-    </ScrollView>
-  );
+  return <BoxScrollView testID="testInnerPage">{children}</BoxScrollView>;
 };
 
 export default InnerPage;

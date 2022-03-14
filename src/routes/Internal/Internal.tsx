@@ -32,7 +32,7 @@ const InternalRouter = () => {
         name={RouterNames.NewCompany}
         component={Register}
         options={{
-          title: "Nova Empresa",
+          title: "Registrar Empresa",
           headerStyle: {
             backgroundColor: theme.colors.frostbite,
           },
