@@ -11,5 +11,5 @@ export const postCompanies = (value: ICompany) => {
 };
 
 export const putCompanies = (value: ICompany) => {
-  return http.put<ICompany>(URl, value);
+  return http.put<ICompany>(`${URl}${value.id}/`, value);
 };
