@@ -11,6 +11,7 @@ import { useSelector } from "react-redux";
 import { StateRedux } from "@/store";
 import { IDataCompany } from "@/store/redux/Company/Reducers";
 import useSplashLoading from "@/hooks/SplashLoading";
+import { getBottomSpace } from "react-native-iphone-x-helper";
 
 const Company: React.FC = () => {
   const [originalData, setOriginalData] = useState<ICompany[]>([]);
@@ -62,7 +63,10 @@ const Company: React.FC = () => {
         data={data}
         keyExtractor={keyExtractor}
         onEndReachedThreshold={0.1}
-        contentContainerStyle={{ paddingHorizontal: 16 }}
+        contentContainerStyle={{
+          paddingHorizontal: 16,
+          marginBottom: getBottomSpace() + 20,
+        }}
         scrollEventThrottle={32}
         renderItem={renderItem}
       />

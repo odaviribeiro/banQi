@@ -10,6 +10,7 @@ import { postCompanies, putCompanies } from "../Services";
 import { companyReloadReduce } from "@/store/redux/Company/Actions";
 import { IDataCompany } from "@/store/redux/Company/Reducers";
 import useSplashLoading from "@/hooks/SplashLoading";
+import { cepRegex } from "@/utils/Regex/Cep";
 
 const Item: React.FC = () => {
   const { setLoadingState } = useSplashLoading();
@@ -23,6 +24,7 @@ const Item: React.FC = () => {
   const handleSubmitForm = useCallback(async (value: ICompany) => {
     setLoadingState("loading");
     value.cnpj = value.cnpj.replace(/[^\d]+/g, "");
+
     try {
       !value.id ? await postCompanies(value) : await putCompanies(value);
       setLoadingState("idle");
@@ -36,6 +38,7 @@ const Item: React.FC = () => {
 
   const formatCnpj = useCallback((company: ICompany) => {
     company.cnpj = cnpjRegex(company.cnpj);
+    company.address.zip = cepRegex(company.address.zip);
     return company;
   }, []);
 

@@ -1,6 +1,6 @@
 import React from "react";
-import { GestureResponderEvent, View } from "react-native";
-import { IButtomStyled } from "../index.style";
+import { GestureResponderEvent } from "react-native";
+import { ButtomForm, IButtomStyled } from "../index.style";
 import Text from "../../Text";
 import Buttom from "..";
 import theme from "@/theme";
@@ -15,13 +15,7 @@ const ButtomComponet: React.FC<IButtom> = (props) => {
   const { goBack } = useNavigation();
 
   return (
-    <View
-      style={{
-        flexDirection: "row",
-        justifyContent: "space-between",
-        marginVertical: 10,
-      }}
-    >
+    <ButtomForm>
       <Buttom onPress={goBack} w="46%" bg={theme.colors.white}>
         <Text fontSize={"20px"} color={theme.colors.primary}>
           Cancelar
@@ -33,7 +27,7 @@ const ButtomComponet: React.FC<IButtom> = (props) => {
           Enviar
         </Text>
       </Buttom>
-    </View>
+    </ButtomForm>
   );
 };
 

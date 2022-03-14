@@ -17,7 +17,7 @@ interface IItem {
 }
 
 const Item: React.FC<IItem> = ({ item }) => {
-  const { name, description, address, cnpj } = item;
+  const { name, description, address, cnpj, logo } = item;
   const { navigate } = useNavigation();
 
   const dispatch = useDispatch();
@@ -46,11 +46,7 @@ const Item: React.FC<IItem> = ({ item }) => {
         }}
       >
         <View style={{ flexDirection: "row" }}>
-          <Image
-            uri={
-              "https://s1.static.brasilescola.uol.com.br/be/conteudo/images/imagem-em-lente-convexa.jpg"
-            }
-          />
+          <Image uri={logo} />
           <TextBody name={name} description={description} cnpj={cnpj} />
         </View>
 
