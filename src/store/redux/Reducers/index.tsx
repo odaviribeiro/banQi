@@ -12,14 +12,15 @@ const initial_state: ICompany = {
   logo: "",
   name: "",
   revenue: 0,
+  id: "",
   address: {
     city: "",
     complement: "",
     neighborhood: "",
-    number: 0,
+    number: "",
     state: "",
     street: "",
-    zip: 0,
+    zip: "",
   },
 };
 

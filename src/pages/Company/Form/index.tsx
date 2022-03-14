@@ -99,7 +99,7 @@ function Form({ handleSubmitForm, initialValues }: IForm<any>) {
       <Input
         onChangeText={handleChange("address.neighborhood")}
         value={values.address?.neighborhood}
-        placeholder="vizinhança"
+        placeholder="Bairro"
         autoCapitalize="none"
       />
 

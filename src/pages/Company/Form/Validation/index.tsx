@@ -34,5 +34,8 @@ export const yupSchema = yup.object().shape({
     number: yup.string().required("Por favor, informe a numero da empresa"),
     state: yup.string().required("Por favor, informe o Estado da empresa"),
     street: yup.string().required("Por favor, informe a rua da empresa"),
+    neighborhood: yup
+      .string()
+      .required("Por favor, informe o bairro da empresa"),
   }),
 });

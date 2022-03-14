@@ -2,18 +2,19 @@ interface IAddress {
   city: string;
   complement?: string;
   neighborhood: string;
-  number: number;
+  number: string;
   state: string;
   street: string;
-  zip: number;
+  zip: string;
 }
 
 export interface ICompany {
   address: IAddress;
   cnpj: string;
-  createdAt?: Date;
+  createdAt?: Date | string;
   description: string;
+  id?: string;
   logo: string;
   name: string;
-  revenue: number;
+  revenue?: number;
 }
