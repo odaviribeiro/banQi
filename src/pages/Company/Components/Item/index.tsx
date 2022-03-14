@@ -4,7 +4,7 @@ import React, { memo, useCallback } from "react";
 import { TouchableWithoutFeedback, View } from "react-native";
 import { useDispatch } from "react-redux";
 import { ICompany } from "../../Interface";
-import RouterNames from "@/routes/Internal";
+import RouterNames from "@/routes";
 import Card from "@/components/Card/index.style";
 import TextBody from "../TextBody";
 import Image from "../Image";

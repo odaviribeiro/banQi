@@ -1,4 +1,4 @@
-import RouterNames from "@/routes/Internal";
+import RouterNames from "@/routes";
 import { StateRedux } from "@/store";
 import { cnpjRegex } from "@/utils/Regex/Cnpj";
 import { useNavigation } from "@react-navigation/native";

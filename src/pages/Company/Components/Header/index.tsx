@@ -1,5 +1,5 @@
 import React, { useCallback, useMemo } from "react";
-import RouterNames from "@/routes/Internal";
+import RouterNames from "@/routes";
 import { useNavigation } from "@react-navigation/native";
 import { View } from "react-native";
 import { useDispatch } from "react-redux";

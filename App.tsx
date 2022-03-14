@@ -4,7 +4,7 @@ import React from "react";
 import { ThemeProvider } from "styled-components/native";
 import theme from "@/theme";
 import { Provider } from "react-redux";
-import InternalRouter from "@/routes/Internal/Internal";
+import InternalRouter from "@/routes/Internal";
 import store from "@/store";
 import { SplashLoadingProvider } from "@/hooks/SplashLoading";
 
