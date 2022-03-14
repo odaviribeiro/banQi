@@ -1,5 +1,5 @@
-# <center>**BanQi**</center>
-<center>**Desafio BanQi**</center>
+# BanQi
+Desafio BanQi
 
 # Sua maquina vai precisar dos requisitos a seguir para rodar esse projeto:
 1. node v. 12.0.0 ou superior 
