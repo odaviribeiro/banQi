@@ -10,7 +10,7 @@ import ButtomForm from "@/components/Buttom/ButtomForm";
 import InnerPage from "@/components/InnerPage";
 import Text from "@/components/Text";
 
-function Form({ handleSubmitForm, initialValues }: IForm<any>) {
+function Form({ handleSubmitForm, initialValues }: IForm<ICompany>) {
   const { handleSubmit, handleChange, values, touched, errors, setFieldValue } =
     useFormik<ICompany>({
       initialValues: initialValues as ICompany,

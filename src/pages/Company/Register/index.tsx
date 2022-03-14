@@ -21,20 +21,23 @@ const Item: React.FC = () => {
   const { navigate } = useNavigation();
   const dispatch = useDispatch();
 
-  const handleSubmitForm = useCallback(async (value: ICompany) => {
-    setLoadingState("loading");
-    value.cnpj = value.cnpj.replace(/[^\d]+/g, "");
+  const handleSubmitForm = useCallback(
+    async (value: ICompany) => {
+      setLoadingState("loading");
+      value.cnpj = value.cnpj.replace(/[^\d]+/g, "");
 
-    try {
-      !value.id ? await postCompanies(value) : await putCompanies(value);
-      setLoadingState("idle");
-      navigate(RouterNames.Home as never);
-    } catch (error) {
-      setLoadingState("idle");
-    } finally {
-      dispatch(companyReloadReduce());
-    }
-  }, []);
+      try {
+        !value.id ? await postCompanies(value) : await putCompanies(value);
+        setLoadingState("idle");
+        navigate(RouterNames.Home as never);
+      } catch (error) {
+        setLoadingState("idle");
+      } finally {
+        dispatch(companyReloadReduce());
+      }
+    },
+    [setLoadingState, navigate, dispatch]
+  );
 
   const formatCnpj = useCallback((company: ICompany) => {
     company.cnpj = cnpjRegex(company.cnpj);

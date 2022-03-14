@@ -1,4 +1,4 @@
-interface IAddress {
+export interface IAddress {
   city: string;
   complement?: string;
   neighborhood: string;

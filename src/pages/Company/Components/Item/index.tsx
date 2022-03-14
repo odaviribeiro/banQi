@@ -9,8 +9,7 @@ import Card from "@/components/Card/index.style";
 import TextBody from "../TextBody";
 import Image from "../Image";
 import { companyReduce } from "@/store/redux/Company/Actions";
-import Text from "@/components/Text/index.style";
-import { cepRegex } from "@/utils/Regex/Cep";
+import Address from "../Anddress";
 
 interface IItem {
   item: ICompany;
@@ -27,7 +26,7 @@ const Item: React.FC<IItem> = ({ item }) => {
       dispatch(companyReduce(value));
       navigate(RouterNames.NewCompany as never);
     },
-    [dispatch]
+    [dispatch, navigate]
   );
 
   return (
@@ -49,16 +48,7 @@ const Item: React.FC<IItem> = ({ item }) => {
           <Image uri={logo} />
           <TextBody name={name} description={description} cnpj={cnpj} />
         </View>
-
-        <View style={{ marginTop: 10, alignItems: "center" }}>
-          <Text
-            fontSize="14px"
-            color={theme.colors.gray}
-          >{`${address.street}, ${address.number} - ${address.neighborhood}`}</Text>
-          <Text fontSize="14px" color={theme.colors.gray}>
-            {`${address.city}/${address.state} - CEP: ${cepRegex(address.zip)}`}
-          </Text>
-        </View>
+        <Address address={address} />
       </Card>
     </TouchableWithoutFeedback>
   );

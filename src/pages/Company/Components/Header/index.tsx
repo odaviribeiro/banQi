@@ -19,7 +19,7 @@ const Header: React.FC<IHeader> = ({ onChangeText }) => {
   const onPress = useCallback(() => {
     dispatch(companyDeleteReduce());
     navigate(RouterNames.NewCompany as never);
-  }, [navigate]);
+  }, [navigate, dispatch]);
 
   const buttomNewCompany = useMemo(
     () => (
@@ -27,7 +27,7 @@ const Header: React.FC<IHeader> = ({ onChangeText }) => {
         Nova Empresa
       </ButtomText>
     ),
-    []
+    [onPress]
   );
 
   return (
