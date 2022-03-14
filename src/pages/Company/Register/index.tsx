@@ -1,4 +1,3 @@
-import useSplashLoading from "../../../hooks/SplashLoading";
 import RouterNames from "@/routes/Internal";
 import { StateRedux } from "@/store";
 import { cnpjRegex } from "@/utils/Regex/Cnpj";
@@ -10,6 +9,7 @@ import { ICompany } from "../Interface";
 import { postCompanies, putCompanies } from "../Services";
 import { companyReloadReduce } from "@/store/redux/Company/Actions";
 import { IDataCompany } from "@/store/redux/Company/Reducers";
+import useSplashLoading from "@/hooks/SplashLoading";
 
 const Item: React.FC = () => {
   const { setLoadingState } = useSplashLoading();

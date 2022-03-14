@@ -1,5 +1,4 @@
 import React, { useCallback, useEffect, useState } from "react";
-import useSplashLoading from "../../hooks/SplashLoading";
 import { FlatList } from "react-native";
 import InnerPage from "@/components/InnerPage";
 import { FlatListRender } from "@/interfaces/FlatList";
@@ -11,6 +10,7 @@ import { getCompanies } from "./Services";
 import { useSelector } from "react-redux";
 import { StateRedux } from "@/store";
 import { IDataCompany } from "@/store/redux/Company/Reducers";
+import useSplashLoading from "@/hooks/SplashLoading";
 
 const Company: React.FC = () => {
   const [originalData, setOriginalData] = useState<ICompany[]>([]);
