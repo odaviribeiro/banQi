@@ -46,8 +46,7 @@ export const SplashLoadingProvider: React.FC = ({ children }) => {
         >
           <Image
             source={require("../../../assets/logo/banqi.png")}
-            height={150}
-            style={{ width: "70%", height: 100 }}
+            style={{ width: 250, height: 91 }}
           />
         </View>
       )}
