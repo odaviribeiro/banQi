@@ -3,6 +3,7 @@ import styled from "styled-components/native";
 
 export interface ICard {
   borderColor?: string;
+  flexDirection?: "row" | "column";
 }
 
 const Card = styled.View<ICard>`
@@ -12,11 +13,12 @@ const Card = styled.View<ICard>`
   padding-horizontal: 10px;
   padding-vertical: 20px;
   margin-bottom: 20px;
-  flex-direction: row;
+  flex-direction: ${({ flexDirection }) => flexDirection};
 `;
 
 Card.defaultProps = {
   borderColor: theme.colors.secondary,
+  flexDirection: "column",
 };
 
 export default Card;

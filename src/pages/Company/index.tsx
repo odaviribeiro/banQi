@@ -3,7 +3,7 @@ import { FlatList } from "react-native";
 import InnerPage from "@/components/InnerPage";
 import { FlatListRender } from "@/interfaces/FlatList";
 import { AxiosError } from "axios";
-import Item from "./Components";
+import Item from "./Components/Item";
 import Header from "./Components/Header";
 import { ICompany } from "./Interface";
 import { getCompanies } from "./Services";
@@ -62,7 +62,7 @@ const Company: React.FC = () => {
         data={data}
         keyExtractor={keyExtractor}
         onEndReachedThreshold={0.1}
-        contentContainerStyle={{ paddingHorizontal: 30, marginBottom: 30 }}
+        contentContainerStyle={{ paddingHorizontal: 16, marginBottom: 30 }}
         scrollEventThrottle={32}
         renderItem={renderItem}
       />

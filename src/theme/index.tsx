@@ -20,7 +20,6 @@ const theme = {
     cyan: "#17a2b8",
     white: "#fff",
     gray: "#6c757d",
-    grayDark: "#343a40",
 
     success: "#28a745",
     info: "#17a2b8",

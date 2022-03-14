@@ -7,14 +7,14 @@ import theme from "@/theme";
 describe("@text: component checks", () => {
   it("should render effect text", () => {
     const effectCallback = jest.fn();
-    render(<TextBody name={""} description={""} />);
+    render(<TextBody name={""} description={""} cnpj={""} />);
 
     expect(effectCallback).toHaveBeenCalledTimes(0);
   });
 
   it("should render defaultProps View TextBody", () => {
     const { getByTestId } = render(
-      <TextBody name={"Hello"} description={"Word"} />
+      <TextBody name={"Hello"} description={"Word"} cnpj={""} />
     );
     const foundBodyElement = getByTestId("testTextBody");
 
@@ -37,7 +37,7 @@ describe("@text: component checks", () => {
 
   it("should render defaultProps styles View TextBody", () => {
     const { getByTestId } = render(
-      <TextBody name={"Hello"} description={"Word"} />
+      <TextBody name={"Hello"} description={"Word"} cnpj={""} />
     );
     const foundBodyElement = getByTestId("testTextBody");
 
@@ -51,7 +51,7 @@ describe("@text: component checks", () => {
 
   it("should render defaultProps styles Text TextBody", () => {
     const { getByTestId } = render(
-      <TextBody name={"Hello"} description={"Word"} />
+      <TextBody name={"Hello"} description={"Word"} cnpj={""} />
     );
     const foundBodyElement = getByTestId("testTextBody");
 

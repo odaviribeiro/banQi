@@ -1,21 +1,23 @@
 import theme from "@/theme";
 import { useNavigation } from "@react-navigation/native";
 import React, { memo, useCallback } from "react";
-import { TouchableWithoutFeedback } from "react-native";
+import { TouchableWithoutFeedback, View } from "react-native";
 import { useDispatch } from "react-redux";
-import { ICompany } from "../Interface";
+import { ICompany } from "../../Interface";
 import RouterNames from "@/routes/Internal";
 import Card from "@/components/Card/index.style";
-import TextBody from "./TextBody";
-import Image from "./Image";
+import TextBody from "../TextBody";
+import Image from "../Image";
 import { companyReduce } from "@/store/redux/Company/Actions";
+import Text from "@/components/Text/index.style";
+import { cepRegex } from "@/utils/Regex/Cep";
 
 interface IItem {
   item: ICompany;
 }
 
 const Item: React.FC<IItem> = ({ item }) => {
-  const { name, description } = item;
+  const { name, description, address, cnpj } = item;
   const { navigate } = useNavigation();
 
   const dispatch = useDispatch();
@@ -43,12 +45,24 @@ const Item: React.FC<IItem> = ({ item }) => {
           elevation: 6,
         }}
       >
-        <Image
-          uri={
-            "https://s1.static.brasilescola.uol.com.br/be/conteudo/images/imagem-em-lente-convexa.jpg"
-          }
-        />
-        <TextBody name={name} description={description} />
+        <View style={{ flexDirection: "row" }}>
+          <Image
+            uri={
+              "https://s1.static.brasilescola.uol.com.br/be/conteudo/images/imagem-em-lente-convexa.jpg"
+            }
+          />
+          <TextBody name={name} description={description} cnpj={cnpj} />
+        </View>
+
+        <View style={{ marginTop: 10, alignItems: "center" }}>
+          <Text
+            fontSize="14px"
+            color={theme.colors.gray}
+          >{`${address.street}, ${address.number} - ${address.neighborhood}`}</Text>
+          <Text fontSize="14px" color={theme.colors.gray}>
+            {`${address.city}/${address.state} - CEP: ${cepRegex(address.zip)}`}
+          </Text>
+        </View>
       </Card>
     </TouchableWithoutFeedback>
   );
