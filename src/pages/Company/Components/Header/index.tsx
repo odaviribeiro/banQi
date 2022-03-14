@@ -1,5 +1,4 @@
 import React, { useCallback, useMemo } from "react";
-import { NavigationPagesProps } from "@/routes";
 import RouterNames from "@/routes/Internal";
 import { useNavigation } from "@react-navigation/native";
 import { View } from "react-native";
@@ -14,12 +13,12 @@ interface IHeader {
 }
 
 const Header: React.FC<IHeader> = ({ onChangeText }) => {
-  const { navigate } = useNavigation<NavigationPagesProps>();
+  const { navigate } = useNavigation();
   const dispatch = useDispatch();
 
   const onPress = useCallback(() => {
     dispatch(companyDeleteReduce());
-    navigate(RouterNames.NewCompany);
+    navigate(RouterNames.NewCompany as never);
   }, [navigate]);
 
   const buttomNewCompany = useMemo(

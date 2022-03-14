@@ -1,4 +1,3 @@
-import { NavigationPagesProps } from "@/routes";
 import { companyReduce } from "../../../store/redux/Actions";
 import theme from "@/theme";
 import { useNavigation } from "@react-navigation/native";
@@ -17,14 +16,14 @@ interface IItem {
 
 const Item: React.FC<IItem> = ({ item }) => {
   const { name, description } = item;
-  const { navigate } = useNavigation<NavigationPagesProps>();
+  const { navigate } = useNavigation();
 
   const dispatch = useDispatch();
 
   const onPress = useCallback(
     (value: ICompany) => {
       dispatch(companyReduce(value));
-      navigate(RouterNames.NewCompany);
+      navigate(RouterNames.NewCompany as never);
     },
     [dispatch]
   );

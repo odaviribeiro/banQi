@@ -32,7 +32,7 @@ const Company: React.FC = () => {
 
   useEffect(() => {
     response();
-  }, []);
+  }, [response]);
 
   const renderItem = useCallback(({ item }: FlatListRender<ICompany>) => {
     return <Item item={item} />;
