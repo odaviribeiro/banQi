@@ -1,9 +1,9 @@
-import { ICompany } from "@/pages/Company/Interface";
 import { createStore } from "redux";
+import { IDataCompany } from "./redux/Company/Reducers";
 import { reducers } from "./rootReducers";
 
 export interface StateRedux {
-  company: ICompany;
+  data: IDataCompany;
 }
 
 const store = createStore(reducers);
