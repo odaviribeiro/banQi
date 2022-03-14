@@ -62,7 +62,7 @@ const Company: React.FC = () => {
         data={data}
         keyExtractor={keyExtractor}
         onEndReachedThreshold={0.1}
-        contentContainerStyle={{ paddingHorizontal: 16, marginBottom: 30 }}
+        contentContainerStyle={{ paddingHorizontal: 16 }}
         scrollEventThrottle={32}
         renderItem={renderItem}
       />
