@@ -1,4 +1,4 @@
-import { companyReduce } from "../../../store/redux/Actions";
+import { companyReduce } from "../../../store/redux/Company/Actions";
 import theme from "@/theme";
 import { useNavigation } from "@react-navigation/native";
 import React, { memo, useCallback } from "react";

@@ -8,12 +8,18 @@ import Item from "./Components";
 import Header from "./Components/Header";
 import { ICompany } from "./Interface";
 import { getCompanies } from "./Services";
+import { useSelector } from "react-redux";
+import { StateRedux } from "@/store";
+import { IDataCompany } from "@/store/redux/Company/Reducers";
 
 const Company: React.FC = () => {
-  const { setLoadingState } = useSplashLoading();
-
   const [originalData, setOriginalData] = useState<ICompany[]>([]);
   const [data, setData] = useState<ICompany[]>([]);
+  const { setLoadingState } = useSplashLoading();
+
+  const dataCompany = useSelector<StateRedux, IDataCompany>(
+    (state) => state.data
+  );
 
   const response = useCallback(async () => {
     setLoadingState("loading");
@@ -32,7 +38,7 @@ const Company: React.FC = () => {
 
   useEffect(() => {
     response();
-  }, [response]);
+  }, [response, dataCompany.loading]);
 
   const renderItem = useCallback(({ item }: FlatListRender<ICompany>) => {
     return <Item item={item} />;

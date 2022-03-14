@@ -8,12 +8,15 @@ import { useDispatch, useSelector } from "react-redux";
 import Form from "../Form";
 import { ICompany } from "../Interface";
 import { postCompanies, putCompanies } from "../Services";
-import { companyDeleteReduce } from "@/store/redux/Actions";
+import { companyReloadReduce } from "@/store/redux/Company/Actions";
+import { IDataCompany } from "@/store/redux/Company/Reducers";
 
 const Item: React.FC = () => {
   const { setLoadingState } = useSplashLoading();
 
-  const company = useSelector<StateRedux, ICompany>((state) => state.company);
+  const dataCompany = useSelector<StateRedux, IDataCompany>(
+    (state) => state.data
+  );
   const { navigate } = useNavigation();
   const dispatch = useDispatch();
 
@@ -23,10 +26,11 @@ const Item: React.FC = () => {
     try {
       !value.id ? await postCompanies(value) : await putCompanies(value);
       setLoadingState("idle");
-      dispatch(companyDeleteReduce());
       navigate(RouterNames.Home as never);
     } catch (error) {
       setLoadingState("idle");
+    } finally {
+      dispatch(companyReloadReduce());
     }
   }, []);
 
@@ -38,7 +42,7 @@ const Item: React.FC = () => {
   return (
     <Form
       handleSubmitForm={handleSubmitForm}
-      initialValues={formatCnpj(company)}
+      initialValues={formatCnpj(dataCompany.company)}
     />
   );
 };

@@ -3,10 +3,10 @@ import RouterNames from "@/routes/Internal";
 import { useNavigation } from "@react-navigation/native";
 import { View } from "react-native";
 import { useDispatch } from "react-redux";
-import { companyDeleteReduce } from "@/store/redux/Actions";
 import theme from "@/theme";
 import ButtomText from "@/components/Buttom/ButtomText";
 import InputSearch from "@/components/Input/InputSearch";
+import { companyDeleteReduce } from "@/store/redux/Company/Actions";
 
 interface IHeader {
   onChangeText: (value: string) => void;
