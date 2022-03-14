@@ -1,4 +1,7 @@
 export const cnpjRegex = (cnpj: string) => {
+  if (!cnpj) {
+    return "";
+  }
   if (cnpj.length > 18) {
     cnpj = cnpj.slice(0, 18);
   }

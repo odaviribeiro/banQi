@@ -1,4 +1,8 @@
 export const cepRegex = (cep: string) => {
+  if (!cep) {
+    return "";
+  }
+
   if (cep.length > 9) {
     cep = cep.slice(0, 9);
   }
