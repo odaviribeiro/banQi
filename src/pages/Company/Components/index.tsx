@@ -1,4 +1,3 @@
-import { companyReduce } from "../../../store/redux/Company/Actions";
 import theme from "@/theme";
 import { useNavigation } from "@react-navigation/native";
 import React, { memo, useCallback } from "react";
@@ -9,6 +8,7 @@ import RouterNames from "@/routes/Internal";
 import Card from "@/components/Card/index.style";
 import TextBody from "./TextBody";
 import Image from "./Image";
+import { companyReduce } from "@/store/redux/Company/Actions";
 
 interface IItem {
   item: ICompany;
