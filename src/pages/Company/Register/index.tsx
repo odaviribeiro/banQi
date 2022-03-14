@@ -1,3 +1,4 @@
+import useSplashLoading from "../../../hooks/SplashLoading";
 import { NavigationPagesProps } from "@/routes";
 import RouterNames from "@/routes/Internal";
 import { StateRedux } from "@/store";
@@ -10,16 +11,20 @@ import { ICompany } from "../Interface";
 import { postCompanies, putCompanies } from "../Services";
 
 const Item: React.FC = () => {
+  const { setLoadingState } = useSplashLoading();
+
   const company = useSelector<StateRedux, ICompany>((state) => state.company);
   const { navigate } = useNavigation<NavigationPagesProps>();
 
   const handleSubmitForm = useCallback(async (value: ICompany) => {
+    setLoadingState("loading");
     value.cnpj = value.cnpj.replace(/[^\d]+/g, "");
     try {
       (await !value.id) ? postCompanies(value) : putCompanies(value);
+      setLoadingState("idle");
       navigate(RouterNames.Home);
     } catch (error) {
-      console.log("ocorreu algum erro com a solicitacao", error);
+      setLoadingState("idle");
     }
   }, []);
 

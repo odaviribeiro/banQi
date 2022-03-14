@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
+import useSplashLoading from "../../hooks/SplashLoading";
 import { FlatList } from "react-native";
 import InnerPage from "@/components/InnerPage";
 import { FlatListRender } from "@/interfaces/FlatList";
@@ -9,10 +10,13 @@ import { ICompany } from "./Interface";
 import { getCompanies } from "./Services";
 
 const Company: React.FC = () => {
+  const { setLoadingState } = useSplashLoading();
+
   const [originalData, setOriginalData] = useState<ICompany[]>([]);
   const [data, setData] = useState<ICompany[]>([]);
 
   const response = useCallback(async () => {
+    setLoadingState("loading");
     await getCompanies()
       .then((res) => {
         setOriginalData(res.data);
@@ -20,12 +24,15 @@ const Company: React.FC = () => {
       })
       .catch((error: AxiosError) => {
         console.log(error.response?.data);
+      })
+      .finally(() => {
+        setLoadingState("idle");
       });
-  }, []);
+  }, [setLoadingState]);
 
   useEffect(() => {
     response();
-  }, [response]);
+  }, []);
 
   const renderItem = useCallback(({ item }: FlatListRender<ICompany>) => {
     return <Item item={item} />;
