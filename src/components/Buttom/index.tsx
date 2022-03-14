@@ -13,7 +13,7 @@ export interface IButtom extends TouchableWithoutFeedbackProps, IButtomStyled {
 const ButtomComponet: React.FC<IButtom> = (props) => {
   const { children } = props;
   return (
-    <TouchableWithoutFeedback {...props}>
+    <TouchableWithoutFeedback {...props} testID="testButtom">
       <Buttom {...props}>{children}</Buttom>
     </TouchableWithoutFeedback>
   );
