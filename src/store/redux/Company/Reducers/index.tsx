@@ -34,12 +34,15 @@ const initial_state: IDataCompany = {
   loading: false,
 };
 
-const reducerCompany = (state = initial_state, action: ActionCompany) => {
+const reducerCompany = (
+  state = initial_state,
+  action: ActionCompany
+): IDataCompany => {
   switch (action.type) {
     case actionsTypesCompany.SET_COMPANY:
       return { company: action.data.company, loading: state.loading };
     case actionsTypesCompany.DELETE_COMPANY:
-      return { company: initial_state, loading: state.loading };
+      return { company: initial_company, loading: state.loading };
     case actionsTypesCompany.RELOAD_COMPANY:
       return { company: initial_company, loading: !state.loading };
 
