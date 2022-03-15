@@ -7,7 +7,7 @@ const theme = {
     textSecundary: "#b1b1b1",
     frostbite: "#f230a3",
     black: "#00000",
-
+    splash: "#07123280",
     blue: "#007bff",
     indigo: "#6610f2",
     purple: "#6f42c1",

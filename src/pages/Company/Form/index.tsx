@@ -75,7 +75,7 @@ function Form({ handleSubmitForm, initialValues }: IForm<ICompany>) {
       </Text>
       <Input
         onChangeText={(value) => setFieldValue("address.zip", cepRegex(value))}
-        value={String(values.address?.zip || "")}
+        value={String(values.address?.zip)}
         placeholder="CEP"
         autoCapitalize="none"
         error={!!touched.address?.zip && !!errors.address?.zip}
@@ -100,14 +100,18 @@ function Form({ handleSubmitForm, initialValues }: IForm<ICompany>) {
 
       <Input
         onChangeText={handleChange("address.neighborhood")}
-        value={values.address?.neighborhood}
+        value={values.address.neighborhood}
         placeholder="Bairro"
         autoCapitalize="none"
+        error={
+          !!touched.address?.neighborhood && !!errors.address?.neighborhood
+        }
+        msgErro={errors.address?.neighborhood}
       />
 
       <Input
         onChangeText={handleChange("address.number")}
-        value={String(values.address?.number || "")}
+        value={String(values.address?.number)}
         keyboardType="numeric"
         placeholder="Número"
         autoCapitalize="none"

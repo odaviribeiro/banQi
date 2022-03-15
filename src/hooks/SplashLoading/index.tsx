@@ -1,3 +1,4 @@
+import theme from "@/theme";
 import React, { useCallback, useContext, useMemo, useState } from "react";
 import { Image, View } from "react-native";
 
@@ -33,7 +34,7 @@ export const SplashLoadingProvider: React.FC = ({ children }) => {
         <View
           style={{
             flex: 1,
-            backgroundColor: "#07123280",
+            backgroundColor: theme.colors.splash,
             position: "absolute",
             zIndex: 2,
             height: "100%",
