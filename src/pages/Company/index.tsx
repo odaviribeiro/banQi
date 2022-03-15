@@ -49,7 +49,12 @@ const Company: React.FC = () => {
   const search = (value: string) => {
     setData(
       [...originalData].filter(
-        (item) => item.name.includes(value) || item.cnpj.includes(value)
+        (item) =>
+          item.name.includes(value) ||
+          item.cnpj.includes(value) ||
+          item.address.city.includes(value) ||
+          item.address.state.includes(value) ||
+          item.address.zip.includes(value)
       )
     );
   };
