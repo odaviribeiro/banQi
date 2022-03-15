@@ -25,13 +25,4 @@ describe("@text: component checks", () => {
 
     expect(effectCallback).toHaveBeenCalledTimes(0);
   });
-
-  it("should render defaultProps styles text ", () => {
-    const { getByTestId } = render(
-      <InnerPage>
-        <Text>Hello Word!</Text>
-      </InnerPage>
-    );
-    const foundBodyElement = getByTestId("testInnerPage");
-  });
 });
