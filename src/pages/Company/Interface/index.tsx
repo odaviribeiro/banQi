@@ -16,5 +16,4 @@ export interface ICompany {
   id?: string;
   logo: string;
   name: string;
-  revenue?: number;
 }

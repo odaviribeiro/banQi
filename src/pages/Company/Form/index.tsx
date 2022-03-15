@@ -62,14 +62,6 @@ function Form({ handleSubmitForm, initialValues }: IForm<ICompany>) {
         msgErro={errors.logo}
       />
 
-      <Input
-        onChangeText={handleChange("revenue")}
-        value={String(values.revenue || "")}
-        placeholder="Receita"
-        autoCapitalize="none"
-        error={!!touched.revenue && !!errors.revenue}
-        msgErro={errors.revenue}
-      />
       <Text mt="12px" fontWeight="700" fontSize="20px">
         Endereço da empresa
       </Text>

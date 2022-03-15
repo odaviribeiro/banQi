@@ -16,7 +16,6 @@ export const initial_company: ICompany = {
   description: "",
   logo: "",
   name: "",
-  revenue: 0,
   id: "",
   address: {
     city: "",
