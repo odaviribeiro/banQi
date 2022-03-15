@@ -5,7 +5,7 @@ import Buttom from "./index";
 import Text from "../Text/index.style";
 import theme from "@/theme";
 
-describe("@text: component checks", () => {
+describe("@Buttom: component checks", () => {
   it("should render Buttom passed to children", () => {
     const { queryByText } = render(
       <Buttom>

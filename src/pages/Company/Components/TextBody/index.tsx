@@ -20,7 +20,7 @@ const TextBody: React.FC<ITextBody> = ({ name, description, cnpj }) => {
         {description}
       </Text>
       <Text color={theme.colors.gray} fontSize="15px">
-        CNPJ: {cnpjRegex(cnpj)}
+        {`CNPJ: ${cnpjRegex(cnpj)}`}
       </Text>
     </View>
   );

@@ -12,27 +12,30 @@ describe("@text: component checks", () => {
     expect(effectCallback).toHaveBeenCalledTimes(0);
   });
 
-  it("should render defaultProps View TextBody", () => {
-    const { getByTestId } = render(
-      <TextBody name={"Hello"} description={"Word"} cnpj={""} />
+  it("should render name View TextBody", () => {
+    const { getAllByText } = render(
+      <TextBody name={"Hello"} description={"Word"} cnpj={"44947443000160"} />
     );
-    const foundBodyElement = getByTestId("testTextBody");
+    const elements = getAllByText(/Hello/i);
+    expect(elements).toHaveLength(1); // expect 'Hello' to be on the list
+  });
 
-    expect(foundBodyElement.props.children[0].props.children).not.toEqual(
-      "Hello Word"
+  it("should render description View TextBody", () => {
+    const { getAllByText } = render(
+      <TextBody name={"Hello"} description={"Word"} cnpj={"44947443000160"} />
     );
-    expect(foundBodyElement.props.children[0].props.children).not.toEqual(
-      "Word"
-    );
-    expect(foundBodyElement.props.children[0].props.children).toEqual("Hello");
+    const elements = getAllByText(/Word/i);
+    expect(elements).toHaveLength(1); // expect 'Word' to be on the list
+  });
 
-    expect(foundBodyElement.props.children[1].props.children).not.toEqual(
-      "Hello Word"
+  it("should render description View TextBody", () => {
+    const { getAllByText } = render(
+      <TextBody name={"Hello"} description={"Word"} cnpj={"44947443000160"} />
     );
-    expect(foundBodyElement.props.children[1].props.children).not.toEqual(
-      "Hello"
-    );
-    expect(foundBodyElement.props.children[1].props.children).toEqual("Word");
+    const elements = getAllByText(/CNPJ/i);
+    expect(elements).toHaveLength(1); // expect 'CNPJ' to be on the list
+    const elements2 = getAllByText(/44.947.443\/0001-60/i);
+    expect(elements2).toHaveLength(1); // expect ' 44.947.443/0001-60' to be on the list
   });
 
   it("should render defaultProps styles View TextBody", () => {
