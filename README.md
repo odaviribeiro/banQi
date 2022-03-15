@@ -50,8 +50,8 @@ yarn test
 <br/>
 
 # Tecnologias, framework e bibliotecas usadas no projeto
-* Java Script
-* Type Script
+* Javascript
+* Typescript
 * Styled-Component
 * Redux
 * React Native
